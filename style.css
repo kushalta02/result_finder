@@ -197,6 +197,10 @@ header h1 {
     display: none;
 }
 
+.text-center {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;

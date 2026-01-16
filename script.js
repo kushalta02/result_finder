@@ -1,3 +1,8 @@
+// Constants
+const MAX_MARKS_PER_SUBJECT = 100;
+const PASSING_PERCENTAGE = 40;
+const MINIMUM_SUBJECT_MARKS = 33;
+
 // Sample student data
 const studentsData = [
     {
@@ -101,9 +106,9 @@ function findStudent(name, roll, studentClass) {
 // Display result
 function displayResult(student) {
     const totalMarks = student.subjects.reduce((sum, subject) => sum + subject.marks, 0);
-    const maxMarks = student.subjects.length * 100;
+    const maxMarks = student.subjects.length * MAX_MARKS_PER_SUBJECT;
     const percentage = ((totalMarks / maxMarks) * 100).toFixed(2);
-    const isPassed = percentage >= 40 && student.subjects.every(subject => subject.marks >= 33);
+    const isPassed = percentage >= PASSING_PERCENTAGE && student.subjects.every(subject => subject.marks >= MINIMUM_SUBJECT_MARKS);
     
     let html = `
         <div class="result-info">
@@ -128,7 +133,7 @@ function displayResult(student) {
             <tr>
                 <td>${subject.name}</td>
                 <td>${subject.marks}</td>
-                <td>100</td>
+                <td>${MAX_MARKS_PER_SUBJECT}</td>
             </tr>
         `;
     });
@@ -141,7 +146,7 @@ function displayResult(student) {
             Total: ${totalMarks}/${maxMarks} (${percentage}%)
         </div>
         
-        <div style="text-align: center;">
+        <div class="text-center">
             <span class="status ${isPassed ? 'pass' : 'fail'}">
                 ${isPassed ? 'PASSED' : 'FAILED'}
             </span>
