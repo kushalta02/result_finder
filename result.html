@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Card - {{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+    <div class="report-card animate__animated animate__fadeIn">
+        <h2>🏫 Alpha International School</h2>
+        <h3>Student Report Card</h3>
+        <div class="student-info">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Roll No:</strong> {{ roll_no }}</p>
+        </div>
+
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Grade</th>
+            </tr>
+            {% for s in subjects %}
+            <tr>
+                <td>{{ s.subject }}</td>
+                <td>{{ s.marks }}</td>
+                <td>{{ s.grade }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div class="summary">
+            <p><strong>Total Marks:</strong> {{ total }}</p>
+            <p><strong>Percentage:</strong> {{ percentage }}%</p>
+            <p><strong>Overall Grade:</strong> {{ grade }}</p>
+        </div>
+
+        <button onclick="window.print()">🖨️ Print Report Card</button>
+        <a href="/" class="back-btn">⬅ Back</a>
+    </div>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background: #69c1ac;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    color: #333;
+}
+
+.report-card {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.student-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #58d0ae;
+    color: #fff;
+}
+
+.summary {
+    margin-top: 20px;
+    text-align: left;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #019874;
+}
+
+.back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0072ff;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
